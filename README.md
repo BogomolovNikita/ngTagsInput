@@ -1,11 +1,4 @@
-# ⚠ This project is no longer maintained
-
 # ngTagsInput 
-
-[![Travis](https://img.shields.io/travis/mbenford/ngTagsInput.svg?style=flat)](https://travis-ci.org/mbenford/ngTagsInput)
-[![Coveralls](https://img.shields.io/coveralls/mbenford/ngTagsInput.svg?style=flat)](https://coveralls.io/r/mbenford/ngTagsInput?branch=master)
-[![David](https://img.shields.io/david/dev/mbenford/ngTagsInput.svg?style=flat)](https://david-dm.org/mbenford/ngTagsInput#info=devDependencies)
-[![GitHub release](https://img.shields.io/github/release/mbenford/ngTagsInput.svg)](https://github.com/mbenford/ngTagsInput/releases)
 
 Tags input directive for AngularJS. Check out the [ngTagsInput website](http://mbenford.github.io/ngTagsInput) for more information.
 
@@ -78,33 +71,3 @@ Now all you have to do is add the scripts to your application. Just make sure th
 ## Options
 
 Check out the [documentation](http://mbenford.github.io/ngTagsInput/documentation/api) page for a detailed view of all available options.
-
-## Demo
-
-You can see the directive in action in the [demo page](http://mbenford.github.io/ngTagsInput/demos).
-
-## Contributing
-
-Before posting an issue or sending a pull request, make sure to read the [CONTRIBUTING](https://github.com/mbenford/ngTagsInput/blob/master/CONTRIBUTING.md) file.
-
-## License
-
-See the [LICENSE](https://github.com/mbenford/ngTagsInput/blob/master/LICENSE) file.
-
-## Changelog
-
-See the [CHANGELOG](https://github.com/mbenford/ngTagsInput/blob/master/CHANGELOG.md) page.
-
-## Alternatives
-
-The following are some alternatives to ngTagsInput you may want to check out:
-
-- [angular-tags](http://decipherinc.github.io/angular-tags): Pure AngularJS tagging widget with typeahead support courtesy of ui-bootstrap
-- [angular-tagger](https://github.com/monterail/angular-tagger): Pure Angular autocomplete with tags, no jQuery
-- [jsTag](https://github.com/eranhirs/jstag): Open source project for editing tags (aka tokenizer) based on AngularJS
-- [bootstrap-tagsinput](http://timschlechter.github.io/bootstrap-tagsinput/examples): jQuery plugin providing a Twitter Bootstrap user interface for managing tags (provides Angular support)
-
-## Latest build
-
-- Compressed: [ng-tags-input.min.zip](https://s3.amazonaws.com/ng-tags-input/ng-tags-input.min.zip)
-- Uncompressed: [ng-tags-input.zip](https://s3.amazonaws.com/ng-tags-input/ng-tags-input.zip)
