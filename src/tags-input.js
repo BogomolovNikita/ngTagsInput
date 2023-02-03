@@ -64,11 +64,14 @@ export default function TagsInputDirective($timeout, $document, $window, $q, tag
       tag[options.displayProperty] = text;
     };
 
+    self.items = [];
+
     let canAddTag = tag => {
       let tagText = getTagText(tag);
       let valid = tagText &&
                   tagText.length >= options.minLength &&
                   tagText.length <= options.maxLength &&
+                  self.items.length < options.maxTags &&
                   options.allowedTagsPattern.test(tagText) &&
                   !tiUtil.findInObjectArray(self.items, tag, options.keyProperty || options.displayProperty);
 
@@ -76,8 +79,6 @@ export default function TagsInputDirective($timeout, $document, $window, $q, tag
     };
 
     let canRemoveTag = tag => $q.when(onTagRemoving({ $tag: tag })).then(tiUtil.promisifyValue);
-
-    self.items = [];
 
     self.addText = text => {
       let tag = {};

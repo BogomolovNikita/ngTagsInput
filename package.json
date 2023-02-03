@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "test": "grunt test",
-    "travis": "grunt travis"
+    "travis": "grunt travis --force"
   },
   "main": "build/ng-tags-input.min.js",
   "dependencies": {},
