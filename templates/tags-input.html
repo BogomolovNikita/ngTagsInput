@@ -1,20 +1,25 @@
 <div class="host tags-input" tabindex="-1" ng-click="eventHandlers.host.click()" ti-transclude-append>
-  <div class="tag-input" ng-class="{focused: hasFocus}">
-    <input class="form-control"
-           autocomplete="off"
-           ng-model="newTag.text"
-           ng-model-options="{getterSetter: true}"
-           ng-keydown="eventHandlers.input.keydown($event)"
-           ng-focus="eventHandlers.input.focus($event)"
-           ng-blur="eventHandlers.input.blur($event)"
-           ng-paste="eventHandlers.input.paste($event)"
-           ng-trim="false"
-           ng-class="{'invalid-tag': newTag.invalid}"
-           ng-disabled="disabled"
-           ng-maxlength="options.maxLength"
-           ti-bind-attrs="{type: options.type, placeholder: options.placeholder, tabindex: options.tabindex, spellcheck: options.spellcheck}"
-           ti-autosize>
-    <div class="tags-statistics">
+  <div class="tag-input">
+    <div class="tags-input-section">
+      <div ng-class="{focused: hasFocus}" tabindex="0" class="input-2-placeholder">
+        <span class="second-placeholder">{{options.secondPlaceholder}}</span>
+        <input class="main-input"
+               autocomplete="off"
+               ng-model="newTag.text"
+               ng-model-options="{getterSetter: true}"
+               ng-keydown="eventHandlers.input.keydown($event)"
+               ng-focus="eventHandlers.input.focus($event)"
+               ng-blur="eventHandlers.input.blur($event)"
+               ng-paste="eventHandlers.input.paste($event)"
+               ng-trim="false"
+               ng-class="{'invalid-tag': newTag.invalid}"
+               ng-disabled="disabled"
+               ng-maxlength="options.maxLength"
+               ti-bind-attrs="{type: options.type, placeholder: options.placeholder, tabindex: options.tabindex, spellcheck: options.spellcheck}">
+      </div>
+      <button ng-click="eventHandlers.button.click($event)">Add</button>
+    </div>
+    <div class="tags-statistics-section">
       <span class="tags-count">{{tagList.items.length}}/{{options.maxTags}}</span>
       <span class="tag-length-count">{{newTag.text().length}}/{{options.maxLength}}</span>
     </div>

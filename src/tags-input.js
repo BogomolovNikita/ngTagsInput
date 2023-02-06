@@ -182,6 +182,7 @@ export default function TagsInputDirective($timeout, $document, $window, $q, tag
         template: [String, 'ngTagsInput/tag-item.html'],
         type: [String, 'text', validateType],
         placeholder: [String, 'Add a tag'],
+        secondPlaceholder: [String, 'Specify the secondPlaceholder'],
         tabindex: [Number, null],
         removeTagSymbol: [String, String.fromCharCode(215)],
         replaceSpacesWithDashes: [Boolean, true],
@@ -358,6 +359,11 @@ export default function TagsInputDirective($timeout, $document, $window, $q, tag
           click(tag) {
             events.trigger('tag-clicked', { $tag: tag });
           }
+        },
+        button: {
+          click($event) {
+            events.trigger('button-press', $event);
+          }
         }
       };
 
@@ -399,8 +405,10 @@ export default function TagsInputDirective($timeout, $document, $window, $q, tag
           }
           element.triggerHandler('blur');
           setElementValidity();
-        })
-        .on('input-keydown', event => {
+        }).on('button-press', event => {
+          tagList.addText(scope.newTag.text());
+          event.preventDefault();
+        }).on('input-keydown', event => {
           let key = event.keyCode;
 
           if (tiUtil.isModifierOn(event) || hotkeys.indexOf(key) === -1) {
@@ -459,6 +467,8 @@ export default function TagsInputDirective($timeout, $document, $window, $q, tag
             }
           }
         });
+
+
     }
   };
 }
